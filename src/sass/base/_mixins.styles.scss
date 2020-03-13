@@ -1,0 +1,9 @@
+@mixin header-grey {
+	color: $dark-grey;
+	opacity: 0.7;
+}
+
+@mixin header-blue {
+	color: $standard-blue;
+	opacity: 0.8;
+}

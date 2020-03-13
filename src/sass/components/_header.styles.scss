@@ -5,6 +5,8 @@
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 	h1 {
 		padding-left: 1rem;
+		color: #333;
+		opacity: 0.7;
 	}
 	&_end {
 		margin: 2rem;
@@ -12,9 +14,9 @@
 		& > div {
 			cursor: pointer;
 			padding: 5px;
-			color: #66a3ff;
+			@include header-blue;
 			&:hover {
-				color: #333;
+				@include header-grey;
 			}
 		}
 	}

@@ -2,9 +2,10 @@
 @import "./config/config.styles";
 
 //Abstracts
-@import "./abstracts/variables.styles";
+@import "./abstracts/variables.styles", "./base/mixins.styles";
 
 //Base
 @import "./base/typography.styles";
+
 //Components
-@import "./components/header.styles";
+@import "./components/header.styles", "./components/footer.styles";
