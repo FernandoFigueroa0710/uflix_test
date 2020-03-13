@@ -1,0 +1,21 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+	h1 {
+		padding-left: 1rem;
+	}
+	&_end {
+		margin: 2rem;
+		display: flex;
+		& > div {
+			cursor: pointer;
+			padding: 5px;
+			color: #66a3ff;
+			&:hover {
+				color: #333;
+			}
+		}
+	}
+}
