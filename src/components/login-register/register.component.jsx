@@ -14,9 +14,12 @@ class Register extends Component {
 					Sign up with your name, email and password
 				</div>
 				<form className="login-form" action="">
-					<input type="text" />
-					<input type="email" />
-					<input type="password" />
+					<label htmlFor="Name">Enter your name</label>
+					<input type="text" required />
+					<label htmlFor="Email">Enter your email</label>
+					<input type="email" required />
+					<label htmlFor="Passoword">Enter your password</label>
+					<input type="password" required />
 				</form>
 			</div>
 		);

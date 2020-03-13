@@ -1,25 +1,24 @@
 .signin-register {
-	background: $light;
-	width: 25vmin;
+	width: 75vw;
+	display: flex;
 	height: auto;
 	border: $regular-border;
+	border-radius: 3px;
 	box-shadow: $shadow;
 	.container {
-		background: $light;
+		margin: 2rem;
 		width: 100%;
 		min-height: 30vh;
 		display: block;
 		.title {
-			background: $light;
 			text-align: center;
 		}
 		.message {
-			background: $light;
 			padding: 1rem;
 			margin-bottom: 1rem;
+			text-align: center;
 		}
 		.login-form {
-			background: $light;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;

@@ -14,7 +14,9 @@ class Login extends Component {
 					Sign in with your email and password
 				</div>
 				<form className="login-form">
+					<label htmlFor="Name">Enter your name</label>
 					<input type="text" />
+					<label htmlFor="Email">Enter your email</label>
 					<input type="email" />
 				</form>
 			</div>

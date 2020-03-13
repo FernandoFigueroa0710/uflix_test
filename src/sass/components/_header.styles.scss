@@ -15,9 +15,9 @@
 		& > div {
 			cursor: pointer;
 			padding: 5px;
-			@include header-blue;
+			@include header-grey;
 			&:hover {
-				@include header-grey;
+				@include header-blue;
 			}
 		}
 	}
