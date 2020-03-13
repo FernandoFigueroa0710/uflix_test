@@ -1,0 +1,43 @@
+.signin-register {
+	background: $light;
+	width: 25vmin;
+	height: auto;
+	border: $regular-border;
+	box-shadow: $shadow;
+	.container {
+		background: $light;
+		width: 100%;
+		min-height: 30vh;
+		display: block;
+		.title {
+			background: $light;
+			text-align: center;
+		}
+		.message {
+			background: $light;
+			padding: 1rem;
+			margin-bottom: 1rem;
+		}
+		.login-form {
+			background: $light;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			&:focus {
+				outline: none;
+			}
+			input {
+				width: 85%;
+				margin-bottom: 1rem;
+				background: none;
+				background-color: #fff;
+				padding: 10px 10px 10px 5px;
+				border-radius: 5px;
+			}
+			input[type="password"] {
+				letter-spacing: 0.3em;
+			}
+		}
+	}
+}

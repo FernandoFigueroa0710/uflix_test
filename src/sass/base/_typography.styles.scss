@@ -8,3 +8,15 @@
 		font-size: 3rem;
 	}
 }
+
+.title {
+	font-size: 3rem;
+	@include header-grey;
+}
+.message {
+	font-size: 1.5rem;
+	@include header-grey;
+}
+input {
+	font-size: 1.5rem;
+}
