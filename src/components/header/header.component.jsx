@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/firebase.utils";
 const Header = ({ currentUser }) => {
-	console.log("HEADER USER", currentUser, "AUTH", auth);
 	return (
 		<header className="header">
 			{currentUser ? (
