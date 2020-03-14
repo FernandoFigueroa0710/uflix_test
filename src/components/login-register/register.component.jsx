@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import FormInput from "../../utils/form_input.component";
-
+import MyButton from "../../utils/customButton.component";
 class Register extends Component {
 	state = {
 		username: "",
@@ -31,7 +31,14 @@ class Register extends Component {
 						onChange={this.handleChange}
 						type="password"
 					/>
+					<FormInput
+						confirmPassword
+						label=" Confirm password"
+						onChange={this.handleChange}
+						type="password"
+					/>
 				</form>
+				<MyButton>Register</MyButton>
 			</div>
 		);
 	}
