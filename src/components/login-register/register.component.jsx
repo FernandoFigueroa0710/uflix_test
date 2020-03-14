@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import FormInput from "../utils/form_input.component";
+import FormInput from "../../utils/form_input.component";
 
 class Register extends Component {
 	state = {
