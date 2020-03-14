@@ -8,7 +8,8 @@
 @import "./base/typography.styles";
 
 //Components
-@import "./components/header.styles", "./components/footer.styles";
+@import "./components/header.styles", "./components/footer.styles",
+	"./components/formInput.styles";
 
 //Pages
 @import "./pages/body.styles", "./pages/login-register.styles";

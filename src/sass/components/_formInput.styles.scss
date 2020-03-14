@@ -1,0 +1,23 @@
+.form-input {
+	width: 100%;
+	margin-bottom: 1rem;
+	.label {
+		@include header-grey;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	input {
+		width: 100%;
+		padding: 10px 10px 10px 5px;
+		border-radius: 5px;
+		outline: none;
+		&:focus,
+		textarea:focus,
+		select:focus {
+			outline: none;
+		}
+	}
+	input[type="password"] {
+		letter-spacing: 0.3em;
+	}
+}

@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import FormInput from "../utils/form_input.component";
 
 class Login extends Component {
 	state = {
 		username: "",
 		password: "",
 		isLoggedIn: false
+	};
+	handleChange = () => {
+		console.log("here");
 	};
 	render() {
 		return (
@@ -14,10 +18,8 @@ class Login extends Component {
 					Sign in with your email and password
 				</div>
 				<form className="login-form">
-					<label htmlFor="Name">Enter your name</label>
-					<input type="text" />
-					<label htmlFor="Email">Enter your email</label>
-					<input type="email" />
+					<FormInput label="name" handleChange={this.handleChange} />
+					<FormInput label="email" handleChange={this.handleChange} />
 				</form>
 			</div>
 		);

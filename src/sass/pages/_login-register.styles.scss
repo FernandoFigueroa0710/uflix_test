@@ -23,20 +23,6 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			&:focus {
-				outline: none;
-			}
-			input {
-				width: 85%;
-				margin-bottom: 1rem;
-				background: none;
-				background-color: #fff;
-				padding: 10px 10px 10px 5px;
-				border-radius: 5px;
-			}
-			input[type="password"] {
-				letter-spacing: 0.3em;
-			}
 		}
 	}
 }

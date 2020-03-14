@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import FormInput from "../utils/form_input.component";
+
 class Register extends Component {
 	state = {
 		username: "",
@@ -14,12 +16,21 @@ class Register extends Component {
 					Sign up with your name, email and password
 				</div>
 				<form className="login-form" action="">
-					<label htmlFor="Name">Enter your name</label>
-					<input type="text" required />
-					<label htmlFor="Email">Enter your email</label>
-					<input type="email" required />
-					<label htmlFor="Passoword">Enter your password</label>
-					<input type="password" required />
+					<FormInput
+						label="name"
+						onChange={this.handleChange}
+						type="text"
+					/>
+					<FormInput
+						label="email"
+						onChange={this.handleChange}
+						type="email"
+					/>
+					<FormInput
+						label="password"
+						onChange={this.handleChange}
+						type="password"
+					/>
 				</form>
 			</div>
 		);
