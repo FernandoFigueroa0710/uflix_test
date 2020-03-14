@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { auth } from "./components/firebase/firebase.utils";
-import Layout from "./hoc/layout.component";
+//import Layout from "./hoc/layout.component";
 import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
 import SigninRegisterPage from "./components/login-register/index";
+import FoodBox from "./components/foodbox/foodBox.component";
+import Monies from "./components/monies/monies.component";
 class App extends Component {
 	constructor() {
 		super();
@@ -32,6 +34,8 @@ class App extends Component {
 			<div className="main-container ">
 				<Header currentUser={this.state.currentUser} />
 				<Switch>
+					<Route path="/food" component={FoodBox} />
+					<Route path="/monies" component={Monies} />
 					<Route exact path="/" component={SigninRegisterPage} />
 				</Switch>
 				<Footer />
