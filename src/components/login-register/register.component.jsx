@@ -6,7 +6,8 @@ class Register extends Component {
 	state = {
 		username: "",
 		email: "",
-		password: ""
+		password: "",
+		confirmPassword: ""
 	};
 	render() {
 		return (
