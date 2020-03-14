@@ -12,7 +12,9 @@
 	&_end {
 		margin: 2rem;
 		display: flex;
-		& > div {
+		& > div,
+		.links {
+			text-decoration: none;
 			cursor: pointer;
 			padding: 5px;
 			@include header-grey;

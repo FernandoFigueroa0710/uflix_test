@@ -4,7 +4,8 @@
 
 .header {
 	font-size: 2rem;
-	&_end > div {
+	&_end,
+	.links {
 		font-size: 3rem;
 	}
 }
