@@ -1,18 +1,15 @@
 import React from "react";
 
-const FormInput = ({
-	handleChange,
-	label,
-	confirmPassword,
-	type,
-	...otherProps
-}) => (
+const FormInput = ({ handleChange, label, ...otherProps }) => (
 	<div className="form-input">
-		<label htmlFor="Input" className="label">
-			{confirmPassword ? "Confirm Password" : `Enter your ${label}`}
-		</label>
-		<input onChange={handleChange} {...otherProps} type={type} />
+		<input className="" onChange={handleChange} {...otherProps} />
+		{label ? (
+			<label
+				className={`${otherProps.value.length ? "shrink" : ""}  label`}
+			>
+				{label}
+			</label>
+		) : null}
 	</div>
 );
-
 export default FormInput;
