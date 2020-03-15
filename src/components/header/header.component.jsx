@@ -28,8 +28,12 @@ const Header = ({ currentUser }) => {
 				</div>
 			) : (
 				<div className="header_end">
-					<div>Login</div>
-					<div>Register</div>
+					<Link className="links" to="/sign_up">
+						SignIn
+					</Link>
+					<Link className="links" to="/sign_up">
+						Register
+					</Link>
 				</div>
 			)}
 		</header>
