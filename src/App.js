@@ -8,6 +8,7 @@ import {
 import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
 import SigninRegisterPage from "./components/login-register/index";
+import LandingPage from "./components/landing-page/landingPage.component";
 import FoodBox from "./components/foodbox/foodBox.component";
 import Monies from "./components/monies/monies.component";
 class App extends Component {
@@ -42,14 +43,21 @@ class App extends Component {
 		this.unsuscribeFromAuth();
 	}
 	render() {
+		const { currentUser } = this.state;
 		console.log("APP RENDER USER", this.state.currentUser);
 		return (
 			<div className="main-container ">
-				<Header currentUser={this.state.currentUser} />
+				<Header currentUser={currentUser} />
 				<Switch>
+					<Route exact path="/" component={LandingPage} />
+					<Route path="/sign_up" component={SigninRegisterPage} />
 					<Route path="/food" component={FoodBox} />
 					<Route path="/monies" component={Monies} />
-					<Route exact path="/" component={SigninRegisterPage} />
+					{currentUser ? (
+						<Redirect to="/" />
+					) : (
+						<Redirect to="/sign_up" />
+					)}
 				</Switch>
 				<Footer />
 			</div>
