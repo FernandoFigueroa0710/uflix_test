@@ -1,0 +1,32 @@
+.signin-register {
+	width: 75vw;
+	display: flex;
+	height: auto;
+	border: $regular-border;
+	border-radius: 3px;
+	box-shadow: $shadow;
+	.container {
+		margin: 2rem;
+		width: 100%;
+		min-height: 30vh;
+		display: block;
+		.title {
+			text-align: center;
+		}
+		.message {
+			padding: 1rem;
+			margin-bottom: 1rem;
+			text-align: center;
+		}
+		.login-form {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			.buttons {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+}
