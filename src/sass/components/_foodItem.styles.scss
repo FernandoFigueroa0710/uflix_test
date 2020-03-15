@@ -1,0 +1,54 @@
+.foodBox-container {
+	display: flex;
+	justify-content: space-between;
+	.foodBox-items {
+		flex-direction: column;
+		margin-left: 2rem;
+	}
+	.foodBox-info {
+		flex-direction: column;
+	}
+}
+
+.food-item {
+	display: flex;
+	min-width: 15vh;
+	margin-bottom: 2.5vh;
+	box-shadow: $shadow;
+
+	&_image {
+		width: 125px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	&_info {
+		padding: 10px;
+		& > div {
+			@include header-grey;
+			font-size: 2rem;
+		}
+	}
+	&_quantity {
+		@include header-grey;
+		font-size: 2rem;
+		padding-top: 3.25rem;
+		padding-left: 2rem;
+	}
+	&_add {
+		max-width: 5vw;
+		width: 85%;
+		margin-left: 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		font-size: 3rem;
+		color: $light;
+		cursor: pointer;
+		background-color: $standard-blue;
+	}
+}
