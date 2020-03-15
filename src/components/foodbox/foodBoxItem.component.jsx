@@ -1,7 +1,6 @@
 import React from "react";
 
 const FoodBoxItem = ({ item }) => {
-	console.log(item);
 	const { name, calories, quantity, image } = item;
 	return (
 		<div className="food-item">
