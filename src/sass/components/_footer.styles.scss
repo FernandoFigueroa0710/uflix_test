@@ -1,0 +1,15 @@
+.footer {
+	height: 12rem;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: $mid-grey;
+	opacity: 0.7;
+	&-text {
+		background-color: $mid-grey;
+		color: $light-grey;
+		font-size: 3rem;
+		padding: 2rem 0;
+	}
+}

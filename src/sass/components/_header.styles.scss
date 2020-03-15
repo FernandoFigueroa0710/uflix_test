@@ -1,0 +1,26 @@
+.header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin: 2rem;
+	box-shadow: $shadow;
+	h1 {
+		padding-left: 1rem;
+		color: #333;
+		opacity: 0.7;
+	}
+	&_end {
+		margin: 2rem;
+		display: flex;
+		& > div,
+		.links {
+			text-decoration: none;
+			cursor: pointer;
+			padding: 5px;
+			@include header-grey;
+			&:hover {
+				@include header-blue;
+			}
+		}
+	}
+}

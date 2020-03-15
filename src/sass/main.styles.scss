@@ -1,0 +1,16 @@
+//Config
+@import "./config/config.styles";
+
+//Abstracts
+@import "./abstracts/variables.styles", "./base/mixins.styles";
+
+//Base
+@import "./base/typography.styles";
+
+//Components
+@import "./components/header.styles", "./components/footer.styles",
+	"./components/formInput.styles", "./components/customButton.styles",
+	"./components/foodItem.styles", "./components/searchBox.styles";
+
+//Pages
+@import "./pages/body.styles", "./pages/login-register.styles";

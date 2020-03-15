@@ -1,0 +1,37 @@
+.custom-button {
+	width: auto;
+	height: 50px;
+	letter-spacing: 0.5px;
+	line-height: 50px;
+	padding: 0 35px 0 35px;
+	font-size: 15px;
+	background-color: $dark-grey;
+	color: $light;
+	text-transform: uppercase;
+	font-family: "Open Sans Condensed";
+	font-weight: bolder;
+	border: none;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	&:hover {
+		background: $light;
+		color: $dark-grey;
+		border: 1px solid $dark-grey;
+	}
+	&.google-sign-in {
+		background-color: $google-blue;
+		color: $light;
+	}
+	&.inverted {
+		background: $light;
+		color: $dark-grey;
+		border: none;
+		&:hover {
+			background-color: $dark-grey;
+			color: $light;
+			border: none;
+		}
+	}
+}
