@@ -1,0 +1,45 @@
+.modal {
+	width: 50%;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: $light;
+	box-shadow: 0 2rem 4rem rgba($black, 0.2);
+	transform: translate(-50%, -50%) scale(1);
+	@include absCenter; //absolute cneter form the mixins
+	&_content {
+		display: flex;
+		flex-direction: column;
+		min-height: 25vh;
+		padding: 2rem;
+		&-text {
+			display: flex;
+			justify-content: space-between;
+			font-size: 2rem;
+			@include header-grey;
+			&_icon {
+				cursor: pointer;
+			}
+		}
+	}
+}
+.modal-overlay {
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba($dark-grey, 0.6);
+}
+.ReactModal__Overlay {
+	opacity: 0;
+	transition: all 300ms 200ms;
+	//transition: opacity 2000ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+	opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+	opacity: 0;
+}

@@ -2,20 +2,30 @@ import React, { Component } from "react";
 import FoodBoxItem from "./foodBoxItem.component";
 import SearchBox from "../searchbox/searchBox.component";
 import myFoods from "../../resources/foods";
+import MyButton from "../../utils/customButton.component";
+import FoodBoxModal from "./foodboxModal.component";
 
 class Foodbox extends Component {
 	constructor() {
 		super();
 		this.state = {
 			filteredFoods: [],
-			searchField: ""
+			searchField: "",
+			modalShow: false
 		};
 	}
 	handleChange = e => {
 		this.setState({ searchField: e.target.value });
 	};
+	handleOpen = () => {
+		this.setState({ modalShow: true });
+	};
+	handleClose = () => {
+		this.setState({ modalShow: false });
+	};
+	addItem = () => {};
 	render() {
-		const { searchField } = this.state;
+		const { searchField, modalShow } = this.state;
 		const filteredFoods = myFoods.filter(item => {
 			return item.name.toLowerCase().includes(searchField.toLowerCase());
 		});
@@ -33,8 +43,17 @@ class Foodbox extends Component {
 							  ))
 							: "NOT"}
 					</div>
+					<FoodBoxModal
+						handleClose={this.handleClose}
+						modalShow={modalShow}
+						addItem={this.addItem}
+					/>
 					<div className="foodBox-info">
 						<span>Food INFO </span>
+
+						<MyButton onClick={this.handleOpen}>
+							Add a new item
+						</MyButton>
 					</div>
 				</div>
 			</div>
