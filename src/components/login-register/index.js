@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import Login from "./login.component";
 import Register from "./register.component";
 class SigninRegisterPage extends Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
-		return (
+		return this.props.currentUser ? (
+			<Redirect to="/" />
+		) : (
 			<div className="signin-register">
 				<Login />
 				<Register />

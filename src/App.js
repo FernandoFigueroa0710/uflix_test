@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import {
 	auth,
 	createUserProfileDocument
@@ -49,15 +49,19 @@ class App extends Component {
 			<div className="main-container ">
 				<Header currentUser={currentUser} />
 				<Switch>
-					<Route exact path="/" component={LandingPage} />
-					<Route path="/sign_up" component={SigninRegisterPage} />
+					<Route
+						exact
+						path="/"
+						render={() => <LandingPage currentUser={currentUser} />}
+					/>
+					<Route
+						path="/sign_up"
+						render={() => (
+							<SigninRegisterPage currentUser={currentUser} />
+						)}
+					/>
 					<Route path="/food" component={FoodBox} />
 					<Route path="/monies" component={Monies} />
-					{currentUser ? (
-						<Redirect to="/" />
-					) : (
-						<Redirect to="/sign_up" />
-					)}
 				</Switch>
 				<Footer />
 			</div>
