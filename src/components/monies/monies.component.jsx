@@ -7,7 +7,7 @@ import MyButton from "../../utils/customButton.component";
 
 class Monies extends Component {
 	static defaultProps = {
-		numberOfMonths: 2
+		numberOfMonths: 1
 	};
 	constructor() {
 		super();
