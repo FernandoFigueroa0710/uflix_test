@@ -46,7 +46,11 @@ class Monies extends Component {
 			to: undefined
 		};
 	}
-	handleDayClick = day => {
+	handleDayClick = (day, modifiers = {}) => {
+		if (modifiers.disabled) {
+			this.handleResetClick();
+			return;
+		}
 		const range = DateUtils.addDayToRange(day, this.state);
 		this.setState({
 			range,
