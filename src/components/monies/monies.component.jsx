@@ -7,7 +7,7 @@ import MyButton from "../../utils/customButton.component";
 
 class Monies extends Component {
 	static defaultProps = {
-		numberOfMonths: 2
+		numberOfMonths: 1
 	};
 	constructor() {
 		super();
@@ -18,7 +18,7 @@ class Monies extends Component {
 				options: {
 					title: {
 						display: true,
-						text: "Bitcoin Charts",
+						text: "Bitcoin Price Index",
 						fontSize: 25
 					},
 					legend: {
@@ -42,17 +42,26 @@ class Monies extends Component {
 				}
 			},
 			disclaimer: "",
+			maxValue: 0,
+			minValue: 0,
 			from: undefined,
 			to: undefined
 		};
 	}
-	handleDayClick = day => {
+	handleDayClick = (day, modifiers = {}) => {
+		if (modifiers.disabled) {
+			this.handleResetClick();
+			return;
+		}
 		const range = DateUtils.addDayToRange(day, this.state);
 		this.setState({
 			range,
 			to: range.to,
 			from: range.from
 		});
+		if (range.from && range.to !== undefined) {
+			this.submitDates(range.from, range.to);
+		}
 	};
 
 	handleResetClick = () => {
@@ -81,6 +90,13 @@ class Monies extends Component {
 		const historicalPrices = Object.values(data.bpi).map(item =>
 			item.toString()
 		);
+		const maxHistVal = Object.values(data.bpi).reduce((acc, val) =>
+			Math.max(acc, val)
+		);
+
+		const minHistVal = Object.values(data.bpi).reduce((acc, val) =>
+			Math.min(acc, val)
+		);
 		this.setState({
 			chartData: {
 				labels: historicalDates,
@@ -92,11 +108,20 @@ class Monies extends Component {
 					}
 				]
 			},
-			disclaimer: bitcoinDisclaimer
+			disclaimer: bitcoinDisclaimer,
+			maxValue: maxHistVal,
+			minValue: minHistVal
 		});
 	};
 	render() {
-		const { chartData, disclaimer, from, to } = this.state;
+		const {
+			chartData,
+			disclaimer,
+			from,
+			to,
+			maxValue,
+			minValue
+		} = this.state;
 		const modifiers = { start: from, end: to };
 		const options = {
 			weekday: "long",
@@ -105,8 +130,8 @@ class Monies extends Component {
 			day: "numeric"
 		};
 		return (
-			<div>
-				<h1 className="monies">Challenge #3 - Bitcoin Charts</h1>
+			<div className="monies">
+				<h1 className="monies-text">Challenge #3 - Bitcoin Chart</h1>
 				<div className="calendars">
 					<p>
 						{!from && !to && "Please select the initial date."}
@@ -124,7 +149,6 @@ class Monies extends Component {
 							Reset the dates
 						</MyButton>
 					)}
-					{from && to && <div>{this.submitDates(from, to)}</div>}
 					<DayPicker
 						className="Selectable"
 						numberOfMonths={this.props.numberOfMonths}
@@ -132,15 +156,21 @@ class Monies extends Component {
 						modifiers={modifiers}
 						onDayClick={this.handleDayClick}
 						disabledDays={[
-							{
-								after: new Date()
-							}
+							{ after: new Date() },
+							{ daysOfWeek: [0, 6] }
 						]}
 						dayPickerProps={{
 							showWeekNumbers: true,
 							todayButton: "Today"
 						}}
 					/>
+				</div>
+				<div className="values">
+					<div>
+						<h3>Values</h3>
+						<div>Max: &#36;{maxValue}USD</div>
+						<div>Min: &#36;{minValue}USD</div>
+					</div>
 				</div>
 				<Line data={chartData} options={chartData.options} />
 				<div className="disclaimer">{disclaimer}</div>

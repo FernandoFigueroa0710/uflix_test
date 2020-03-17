@@ -1,49 +1,59 @@
 .monies {
-	@include header-grey;
-	text-align: center;
-}
-.calendars {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	p {
+	&-text {
 		@include header-grey;
-		font-size: 2.5rem;
+		text-align: center;
 	}
-	.Selectable {
+	.calendars {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		p {
+			@include header-grey;
+			font-size: 2.5rem;
+		}
+		.Selectable {
+			font-size: 2rem;
+			.DayPicker-wrapper {
+				width: 100%;
+				.DayPicker-NavBar {
+					justify-content: space-between;
+				}
+				.DayPicker-Months {
+					display: flex;
+					justify-content: flex-start;
+				}
+			}
+			.DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+				background-color: #f0f8ff !important;
+				color: #4a90e2;
+			}
+			.DayPicker-Day {
+				border-radius: 0 !important;
+			}
+			.DayPicker-Day--start {
+				border-top-left-radius: 50% !important;
+				border-bottom-left-radius: 50% !important;
+			}
+			.DayPicker-Day--end {
+				border-top-right-radius: 50% !important;
+				border-bottom-right-radius: 50% !important;
+			}
+		}
+	}
+	.values {
+		@include header-grey;
+		font-size: 2.25rem;
+		margin-left: 3rem;
+	}
+
+	.disclaimer {
+		margin: 3rem;
+		@include header-grey;
 		font-size: 2rem;
-		.DayPicker-wrapper {
-			width: 100%;
-			.DayPicker-NavBar {
-				justify-content: space-between;
-			}
-			.DayPicker-Months {
-				display: flex;
-				justify-content: flex-start;
-			}
-		}
-		.DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-			background-color: #f0f8ff !important;
-			color: #4a90e2;
-		}
-		.DayPicker-Day {
-			border-radius: 0 !important;
-		}
-		.DayPicker-Day--start {
-			border-top-left-radius: 50% !important;
-			border-bottom-left-radius: 50% !important;
-		}
-		.DayPicker-Day--end {
-			border-top-right-radius: 50% !important;
-			border-bottom-right-radius: 50% !important;
-		}
+		text-align: center;
+		text-transform: uppercase;
 	}
-}
-.disclaimer {
-	margin: 3rem;
-	@include header-grey;
-	font-size: 2rem;
-	text-align: center;
-	text-transform: uppercase;
 }

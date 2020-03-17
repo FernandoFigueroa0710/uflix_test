@@ -5,3 +5,20 @@
 		margin-top: 15vh;
 	}
 }
+
+.main-page {
+	margin: 10vh 10vw;
+	height: 51vh;
+	&_title {
+		@include header-grey;
+		text-align: center;
+	}
+	&_section {
+		@include header-grey;
+		text-align: start;
+		font-size: 2rem;
+		ul {
+			list-style-type: none;
+		}
+	}
+}
