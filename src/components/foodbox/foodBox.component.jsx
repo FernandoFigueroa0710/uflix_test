@@ -46,7 +46,17 @@ class Foodbox extends Component {
 		objToSubmit.calories = itemCalories;
 		objToSubmit.quantity = itemQuantity;
 		objToSubmit.image = itemImgUrl;
-		addFoodDocumentToCollection(objToSubmit);
+		addFoodDocumentToCollection(objToSubmit).then(response => {
+			this.setState({
+				filteredFoods: [],
+				modalShow: false,
+				searchField: "",
+				itemName: "",
+				itemCalories: 0,
+				itemQuantity: 0,
+				itemImgUrl: ""
+			});
+		});
 	};
 	handleItemCount = item => {
 		console.log("HERE", item);

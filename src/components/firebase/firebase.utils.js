@@ -53,23 +53,18 @@ export const addCollectionAndDocuments = async (
 };
 
 export const addFoodDocumentToCollection = async object => {
-	const foodCollectionRef = firestore.doc(`foods/${object.uid}`);
-	const snapShot = await foodCollectionRef.get();
-	if (!snapShot.exists) {
-		try {
-			const { name, calories, quantity, image } = object;
-			const createdAt = new Date();
-			await foodCollectionRef.set({
-				name,
-				calories,
-				quantity,
-				image,
-				createdAt
-			});
-		} catch (error) {
-			console.log("Error creating item", error.message);
-		}
-	}
+	const foodCollectionRef = firestore.collection("foods");
+	const newFoodCollectionRef = foodCollectionRef.doc();
+	const { name, calories, quantity, image } = object;
+	const createdAt = new Date();
+	newFoodCollectionRef.set({
+		name,
+		calories,
+		quantity,
+		image,
+		createdAt
+	});
+
 	return foodCollectionRef;
 };
 
