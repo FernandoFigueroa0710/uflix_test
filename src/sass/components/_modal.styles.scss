@@ -5,7 +5,8 @@
 	background-color: $light;
 	box-shadow: 0 2rem 4rem rgba($black, 0.2);
 	transform: translate(-50%, -50%) scale(1);
-	@include absCenter; //absolute cneter form the mixins
+	@include absCenter;
+	padding: 2rem 1rem;
 	&_content {
 		display: flex;
 		flex-direction: column;
@@ -33,7 +34,6 @@
 .ReactModal__Overlay {
 	opacity: 0;
 	transition: all 300ms 200ms;
-	//transition: opacity 2000ms ease-in-out;
 }
 
 .ReactModal__Overlay--after-open {

@@ -37,6 +37,42 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 	return userRef;
 };
 
+export const addCollectionAndDocuments = async (
+	collectionKey,
+	objectsToAdd
+) => {
+	const collectionRef = firestore.collection(collectionKey);
+
+	const batch = firestore.batch();
+	objectsToAdd.forEach(obj => {
+		const newDocRef = collectionRef.doc();
+		batch.set(newDocRef, obj);
+	});
+
+	return await batch.commit();
+};
+
+export const addFoodDocumentToCollection = async object => {
+	const foodCollectionRef = firestore.doc(`foods/${object.uid}`);
+	const snapShot = await foodCollectionRef.get();
+	if (!snapShot.exists) {
+		try {
+			const { name, calories, quantity, image } = object;
+			const createdAt = new Date();
+			await foodCollectionRef.set({
+				name,
+				calories,
+				quantity,
+				image,
+				createdAt
+			});
+		} catch (error) {
+			console.log("Error creating item", error.message);
+		}
+	}
+	return foodCollectionRef;
+};
+
 firebase.initializeApp(firebaseConfig);
 
 export const firestore = firebase.firestore();

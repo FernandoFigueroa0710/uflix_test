@@ -4,6 +4,7 @@ import {
 	auth,
 	createUserProfileDocument
 } from "./components/firebase/firebase.utils";
+
 //import Layout from "./hoc/layout.component";
 import Header from "./components/header/header.component";
 import Footer from "./components/footer/footer.component";
