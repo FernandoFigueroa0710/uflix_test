@@ -70,7 +70,7 @@ class Monies extends Component {
 
 	componentDidMount() {
 		axios
-			.get("http://api.coindesk.com/v1/bpi/historical/close.json ")
+			.get("https://api.coindesk.com/v1/bpi/historical/close.json ")
 			.then(response => this.filterData(response.data))
 			.catch(error => console.log(error));
 	}
